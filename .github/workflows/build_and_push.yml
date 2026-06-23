@@ -29,6 +29,6 @@ jobs:
           context: .
           push: true
           tags: |
-            andrewhthomas/build-tools-ci:9.x-php${{ matrix.php-versions }}
+            andrewhthomas/docker-build-tools-ci:9.x-php${{ matrix.php-versions }}
           build-args: |
             PHPVERSION=${{ matrix.php-versions }}

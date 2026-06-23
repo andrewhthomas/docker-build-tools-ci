@@ -49,16 +49,16 @@ From project root:
 ```
 # PHPVERSION could be 8.2, 8.3 or 8.4.
 PHPVERSION=8.4
-docker build --build-arg PHPVERSION=$PHPVERSION -t andrewhthomas/build-tools-ci:9.x-php${PHPVERSION} .
+docker build --build-arg PHPVERSION=$PHPVERSION -t andrewhthomas/docker-build-tools-ci:9.x-php${PHPVERSION} .
 ```
 
 ### Using the image
 
 #### Image name and tag
 
-- andrewhthomas/build-tools-ci:9.x-php8.2
-- andrewhthomas/build-tools-ci:9.x-php8.3
-- andrewhthomas/build-tools-ci:9.x-php8.4
+- andrewhthomas/docker-build-tools-ci:9.x-php8.2
+- andrewhthomas/docker-build-tools-ci:9.x-php8.3
+- andrewhthomas/docker-build-tools-ci:9.x-php8.4
 
 #### Usage example
 
