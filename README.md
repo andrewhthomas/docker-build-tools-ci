@@ -1,13 +1,8 @@
 # Docker Build Tools CI
 
-[![docker pull quay.io/pantheon-public/build-tools-ci](https://img.shields.io/badge/image-quay-blue.svg)](https://quay.io/repository/pantheon-public/build-tools-ci)
-[![Deprecated](https://img.shields.io/badge/Pantheon-Deprecated-red?logo=pantheon)](https://pantheon.io/docs/oss-support-levels)
+> **Maintained fork.** This is a fork of the now-deprecated [pantheon-systems/docker-build-tools-ci](https://github.com/pantheon-systems/docker-build-tools-ci), maintained for Message Agency CI pipelines. Unlike upstream, it continues to receive updates and fixes. Images are published to a personal/Message Agency Docker Hub namespace (see the workflow in `.github/workflows/`).
 
-[![Docker Hub pantheonpublic/build-tools-ci](https://img.shields.io/docker/pulls/pantheonpublic/build-tools-ci)](https://hub.docker.com/repository/docker/pantheonpublic/build-tools-ci)
-
-> **This project is deprecated.** This is the final release and will no longer receive updates, bug fixes, or security patches. If you are currently using this image, please migrate to an alternative solution.
-
-This is the source Dockerfile for the [pantheon-public/build-tools-ci](https://quay.io/repository/pantheon-public/build-tools-ci) and [pantheonpublic/build-tools-ci](https://hub.docker.com/repository/docker/pantheonpublic/build-tools-ci) docker image.
+This is the source Dockerfile for the build-tools-ci docker image used by Message Agency Pantheon CI/CD.
 
 ## Image Contents
 
@@ -54,16 +49,16 @@ From project root:
 ```
 # PHPVERSION could be 8.2, 8.3 or 8.4.
 PHPVERSION=8.4
-docker build --build-arg PHPVERSION=$PHPVERSION -t quay.io/pantheon-public/build-tools-ci:9.x-php${PHPVERSION} .
+docker build --build-arg PHPVERSION=$PHPVERSION -t andrewhthomas/build-tools-ci:9.x-php${PHPVERSION} .
 ```
 
 ### Using the image
 
 #### Image name and tag
 
-- quay.io/pantheon-public/build-tools-ci:9.x-php8.2
-- quay.io/pantheon-public/build-tools-ci:9.x-php8.3
-- quay.io/pantheon-public/build-tools-ci:9.x-php8.4
+- andrewhthomas/build-tools-ci:9.x-php8.2
+- andrewhthomas/build-tools-ci:9.x-php8.3
+- andrewhthomas/build-tools-ci:9.x-php8.4
 
 #### Usage example
 

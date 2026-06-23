@@ -110,8 +110,12 @@ RUN terminus self:plugin:add terminus-composer-plugin
 RUN terminus self:plugin:add terminus-mass-update
 RUN terminus self:plugin:add terminus-site-clone-plugin
 
-ENV TERMINUS_PLUGINS_DIR=/home/tester/.terminus/plugins-4.x
-ENV TERMINUS_DEPENDENCIES_BASE_DIR=/home/tester/.terminus/terminus-dependencies
+# NOTE: Do NOT set TERMINUS_PLUGINS_DIR / TERMINUS_DEPENDENCIES_BASE_DIR here.
+# The plugins above install into Terminus's default dirs (~/.terminus/plugins-3.x
+# and a hashed ~/.terminus/terminus-dependencies-* dir). Overriding these env vars
+# to point elsewhere makes `terminus self:plugin:update` re-resolve against an empty
+# dependency set and wipe ALL installed plugins, which removes the build:env namespace
+# at deploy time. Leaving them unset keeps reads and updates consistent.
 
 # Add phpcs for use in checking code style
 RUN mkdir ~/phpcs && cd ~/phpcs && COMPOSER_BIN_DIR=/usr/local/bin composer require squizlabs/php_codesniffer:^2.7
